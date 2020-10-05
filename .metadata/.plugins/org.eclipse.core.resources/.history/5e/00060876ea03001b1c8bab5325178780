@@ -1,6 +1,0 @@
-package com.bit.action;
-
-public class FindPwdAction implements BitAction{
-	
-
-}
