@@ -92,7 +92,9 @@ public class ClassRegDao {
 		String check = "휴학";
 		check = sdao.statusCheck(std_no);
 		if(!check.equals("재학")) {
-			return re; //재학자만 신청가능
+			return re; //재학자, 복학자만 신청가능
+		}else if (!check.equals("복학")) {
+			return re;
 		}
 		
 		int classreg_no = dao.getNextClassregNo();
