@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<item key="selection" value="nav_window"/>
+		<list key="findhistory">
+			<item value="nav_window"/>
+			<item value="tables"/>
+			<item value=".nav"/>
+			<item value="nav_boxes"/>
+			<item value="header"/>
+			<item value="decora"/>
+			<item value="hr"/>
+			<item value="padding"/>
+			<item value="section"/>
+			<item value="nav"/>
+			<item value="main"/>
+			<item value="a"/>
+			<item value="main {"/>
+			<item value="&#x09;  "/>
+			<item value="table"/>
+		</list>
+		<list key="replacehistory">
+			<item value=""/>
+			<item value="place"/>
+			<item value="getConnection()"/>
+			<item value="../"/>
+			<item value="session."/>
+			<item value="request.getSession()."/>
+			<item value="box_blue"/>
+			<item value="findPwd"/>
+			<item value="find_pwd_box"/>
+			<item value="email_box"/>
+			<item value="name_box"/>
+			<item value="email_icon"/>
+			<item value="name_icon"/>
+			<item value="submit_button"/>
+			<item value="find_id_image"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="1074"/>
+		<item key="DIALOG_Y_ORIGIN" value="232"/>
+		<item key="DIALOG_WIDTH" value="288"/>
+		<item key="DIALOG_HEIGHT" value="391"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+</section>

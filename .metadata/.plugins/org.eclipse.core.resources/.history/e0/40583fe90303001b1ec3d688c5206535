@@ -1,0 +1,7 @@
+login.do=com.bit.action.LoginAction
+loginOk.do=com.bit.action.LoginOkAction
+login/main.do=com.bit.action.MainAction
+login/change.do=com.bit.action.ChangeAction
+login/logout.do=com.bit.action.LogoutAction
+login/studentInfo.do=com.bit.action.StudentInfoAction
+login/startEndDate.do=com.bit.action.startEndDateAction

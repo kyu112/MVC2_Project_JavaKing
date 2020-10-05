@@ -1,0 +1,12 @@
+login.do=com.bit.action.LoginAction
+loginOk.do=com.bit.action.LoginOkAction
+login/main.do=com.bit.action.MainAction
+login/change.do=com.bit.action.ChangeAction
+login/logout.do=com.bit.action.LogoutAction
+login/studentInfo.do=com.bit.action.StudentInfoAction
+login/startEndDate.do=com.bit.action.StartEndDateAction
+findId.do=com.bit.action.FindIdAction
+findPwd.do=com.bit.action.FindPwdAction
+findIdOk.do=com.bit.action.FindIdOkAction
+findPwdOk.do=com.bit.action.FindPwdOkAction
+login/changePwd.do=com.bit.action.ChangePwdAction

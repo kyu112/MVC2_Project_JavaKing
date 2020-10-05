@@ -1,0 +1,54 @@
+package com.bit.action;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.bit.dao.BitDao;
+import com.bit.vo.StudentVo;
+
+public class LoginOkAction implements BitAction {
+
+    @Override
+    public String pro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	BitDao dao = new BitDao();
+    	 
+    	// 인코딩
+    	request.setCharacterEncoding("UTF-8");
+    	
+    	// login.jsp 에서 입력한 아이디
+        int id = Integer.parseInt(request.getParameter("id"));
+        
+        // 아이디 저장 체크 여부 확인
+        String remember_id = "notChecked";
+        if (request.getParameter("cb_id") != null) {
+        	remember_id = request.getParameter("cb_id");
+        }
+        
+        // 아이디 저장에 체크 했을 경우 저장한 아이디 반환
+        if (remember_id.equals("checked")) {
+        	request.getSession().setAttribute("re_id", id);
+        }
+        
+        // login.jsp 에서 입력한 비밀번호
+        String pwd = request.getParameter("pwd");
+       
+        // 기본적으로 실패했다고 가정, login.jsp 로 보냄
+        String view = "login.jsp";
+        
+        // main 에서 사용할 성명 상태유지
+        String name = dao.getStudentinfo(id).getStd_name();
+        
+        // 로그인 성공 여부 확인
+        int check = dao.login(id, pwd);
+        if (check == 1) {
+            request.getSession().setAttribute("login", id);
+            request.getSession().setAttribute("name", name);
+            view = "login/main.do";
+        }
+        return view;
+    }
+
+}

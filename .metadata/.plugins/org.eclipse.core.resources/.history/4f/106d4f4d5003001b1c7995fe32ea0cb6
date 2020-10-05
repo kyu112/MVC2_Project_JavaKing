@@ -1,0 +1,93 @@
+package com.bit.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Calendar;
+
+import com.bit.db.ConnectionProvider;
+import com.bit.vo.ChangeVo;
+import com.bit.vo.StudentVo;
+
+public class BitDao {
+	public int login(int id, String pwd) {
+		int re = 0;
+		try {
+			String sql = "select count(*) from student where STD_NO=? and STD_PWD=?";
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, id);
+			pstmt.setString(2, pwd);
+			ResultSet rs = pstmt.executeQuery();
+			if (rs.next()) {
+				re = rs.getInt(1);
+			}
+			ConnectionProvider.close(conn, pstmt, rs);
+		} catch (Exception e) {
+			System.out.println("login error : " + e.getMessage());
+		}
+		return re;
+	}
+
+	public ChangeVo getChange(int std_no) {
+		ChangeVo vo = null;
+		try {
+			String sql = "select * from change where STD_NO=?";
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, std_no);
+			Calendar cal = Calendar.getInstance();
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				vo = new ChangeVo(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getInt(4), rs.getString(5),
+						rs.getDate(6), rs.getInt(7));
+			}
+			ConnectionProvider.close(conn, pstmt, rs);
+		} catch (Exception e) {
+			System.out.println("getChange error : " + e.getMessage());
+		}
+		return vo;
+	}
+
+	public StudentVo getStudentInfo(int STD_NO) {
+		StudentVo sv = null;
+		try {
+			String sql = "select * from student where STD_NO=?";
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, STD_NO);
+			ResultSet rs = pstmt.executeQuery();
+			if (rs.next()) {
+				sv = new StudentVo(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),
+						rs.getDate(6), rs.getInt(7), rs.getInt(8), rs.getString(9), rs.getString(10), rs.getDate(11),
+						rs.getDate(12), rs.getString(13), rs.getInt(14));
+			}
+			ConnectionProvider.close(conn, pstmt, rs);
+		} catch (Exception e) {
+			System.out.println("Studentinfo:" + e.getMessage());
+		}
+		return sv;
+	}
+
+	public StudentVo getStartEndDate(int STD_NO) {
+		StudentVo sv2 = null;
+		try {
+			String sql = "select * from student where STD_NO = ?";
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, STD_NO);
+			ResultSet rs = pstmt.executeQuery();
+			if (rs.next()) {
+				sv2 = new StudentVo(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),
+						rs.getDate(6), rs.getInt(7), rs.getInt(8), rs.getString(9), rs.getString(10), rs.getDate(11),
+						rs.getDate(12), rs.getString(13), rs.getInt(14));
+			}
+			ConnectionProvider.close(conn, pstmt, rs);
+		} catch (Exception e) {
+			System.out.println("StartEndDate:" + e.getMessage());
+		}
+		return sv2;
+	}
+}
