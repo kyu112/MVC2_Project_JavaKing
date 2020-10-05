@@ -38,7 +38,7 @@ public class LoginFilter implements Filter {
             throws IOException, ServletException {
         // TODO Auto-generated method stub
         // place your code here
-        if (((HttpServletRequest) request).getSession().getAttribute("login") != null) {
+        if (((HttpServletRequest) request).getSession().getAttribute("std_no") != null) {
             // pass the request along the filter chain
             chain.doFilter(request, response);
         } else {

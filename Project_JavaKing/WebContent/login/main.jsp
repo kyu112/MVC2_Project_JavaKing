@@ -426,8 +426,8 @@ footer {
 							</div>
 							<ul class= "inside_list">
 								<li><p class = "p2"><a href = "classreg.jsp">수강신청</a></p></li>
-								<li><p class = "p2"><a href = "classreg.jsp">수강내역조회</a></p></li>
-								<li><p class = "p2"><a href = "classreg.jsp">시간표조회</a></p></li>
+								<li><p class = "p2"><a href = "classSearch.do">수강내역조회</a></p></li>
+								<li><p class = "p2"><a href = "classSearch.do">시간표조회</a></p></li>
 							</ul>
 						</div>
 						<div class = "nav_right_box">
@@ -548,7 +548,7 @@ footer {
 							${name }
 						</div>
 						<div id = "my_info_id">
-							${login }
+							${std_no }
 						</div>
 					</div>
 				</div>

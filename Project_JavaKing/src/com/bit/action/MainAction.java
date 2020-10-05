@@ -15,7 +15,7 @@ public class MainAction implements BitAction {
 
 	@Override
 	public String pro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-BoardDao b_dao = new BoardDao();
+		BoardDao b_dao = new BoardDao();
 		
 		HttpSession session = request.getSession();
 		

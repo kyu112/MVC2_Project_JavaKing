@@ -52,7 +52,7 @@ public class LoginOkAction implements BitAction {
             int semester = dao.getStudentInfo(id).getStd_semester();
             String major = dao.getStudentInfo(id).getStd_major();
             String email = dao.getStudentInfo(id).getStd_email();
-            request.getSession().setAttribute("login", id);
+            request.getSession().setAttribute("std_no", id);
             request.getSession().setAttribute("name", name);
             request.getSession().setAttribute("level", level);
             request.getSession().setAttribute("semester", semester);
